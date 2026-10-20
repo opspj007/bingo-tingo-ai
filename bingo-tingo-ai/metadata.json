@@ -1,0 +1,6 @@
+{
+  "name": "Bingo Tingo AI",
+  "description": "Interactive Bingo card and social media template editor with custom card layouts, Gemini AI generation, export suite, and real-time 2-player multiplayer duel arena.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

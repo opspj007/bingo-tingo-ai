@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+/* Keyframe animations */
+@keyframes flickerAnimation {
+  0% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes holographic {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, -3px); }
+  50% { transform: translate(3px, 3px); }
+  75% { transform: translate(-3px, 3px); }
+  100% { transform: translate(3px, -3px); }
+}
+
+@keyframes wave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes shakeAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes snapPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Text and Visual Effects */
+.neon-glow {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 35px #00ff00;
+}
+
+.holographic {
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-size: 300% 300%;
+  color: transparent !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: holographic 3s ease infinite;
+}
+
+.glitch {
+  position: relative;
+  animation: glitch-anim 1.2s infinite ease-in-out alternate;
+  text-shadow: 2px 2px #ff0055, -2px -2px #00f0ff;
+}
+
+.flicker {
+  animation: flickerAnimation 0.8s infinite alternate;
+}
+
+.shake {
+  animation: shakeAnimation 0.5s ease-in-out infinite;
+}
+
+.wavy-text {
+  display: inline-block;
+  position: relative;
+  color: #3498db;
+}
+
+.wave {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.ink-spill {
+  position: relative;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+}
+
+.zoom-2d {
+  transform: scale(1.15);
+}
+
+.zoom-3d {
+  transform: scale(1.15) perspective(500px) rotateX(20deg);
+}
+
+.zoom-4d {
+  transform: scale(1.15) perspective(500px) rotateX(20deg) rotateY(20deg);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.glow {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.tilt {
+  transform: rotate(5deg) skewX(5deg);
+}
+
+.flip-3d {
+  perspective: 800px;
+  transform: rotateY(25deg);
+}
+
+.rotate-30 { transform: rotate(30deg); }
+.rotate-45 { transform: rotate(45deg); }
+.rotate-90 { transform: rotate(90deg); }
+.rotate-180 { transform: rotate(180deg); }
+.rotate-270 { transform: rotate(270deg); }
+
+.underline-animation {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: #a0522d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b3e1f;
+}
+
+/* Entrance Animations */
+@keyframes entranceFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes entranceSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entranceBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.7);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-16px) scale(1.08);
+  }
+  75% {
+    transform: translateY(6px) scale(0.97);
+  }
+  90% {
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes entranceZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.entrance-anim-fade-in {
+  animation-name: entranceFadeIn;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-anim-slide-up {
+  animation-name: entranceSlideUp;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-anim-bounce {
+  animation-name: entranceBounce;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.entrance-anim-zoom-in {
+  animation-name: entranceZoomIn;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pristine Card Export Styles */
+.is-exporting {
+  box-shadow: none !important;
+}
+
+.is-exporting .export-hide,
+.is-exporting .quick-edit-popover,
+.is-exporting .resizer-handle {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.is-exporting * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.is-exporting [class*="ring-"] {
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* Studio Canvas Precision Grid Pattern */
+.studio-canvas-pattern {
+  background-image: radial-gradient(circle, rgba(140, 110, 70, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .studio-canvas-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Luxury Card Shadow Elevation */
+.luxury-card-shadow {
+  box-shadow: 
+    0 20px 45px -10px rgba(28, 25, 23, 0.18),
+    0 10px 20px -5px rgba(28, 25, 23, 0.08),
+    0 0 0 1px rgba(180, 130, 60, 0.12);
+}
+
+.dark .luxury-card-shadow {
+  box-shadow: 
+    0 25px 60px -15px rgba(0, 0, 0, 0.8),
+    0 10px 25px -5px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Metallic gold button foil */
+.gold-metallic-foil {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #92400e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-metallic-foil::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.gold-metallic-foil:hover::after {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+/* Print styles for high quality card printing */
+@media print {
+  body {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
